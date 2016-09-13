@@ -17,6 +17,6 @@ export default (
 );
 
 
-// mathces path of / to App components
+// matches path of / to App components
 
 // IndexRoute is helper that behaves like a route. It's shown whenever URL matches up with path defiend by parent but not children

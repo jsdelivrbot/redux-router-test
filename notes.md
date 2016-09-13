@@ -17,3 +17,10 @@ Concept questions / not nit picky
 
 
 reduxForm has same behavior as connect, so we can use it to inject action creators into our components and create a container out of component
+
+
+
+validate function
+- Add a truthy value to errors.field
+- If that field matches a form field, reduxForm won't let it submit
+- 

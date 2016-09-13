@@ -14,3 +14,6 @@ Concept questions / not nit picky
 
 
 - Will have state that is array of posts and then state that is show action/individual post
+
+
+reduxForm has same behavior as connect, so we can use it to inject action creators into our components and create a container out of component

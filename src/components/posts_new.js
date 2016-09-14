@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form'
   // nearly identical to connect function
   // use reduxForm function to wrap PostsNew component
@@ -9,13 +9,27 @@ import { createPost } from '../actions/index'
 
 
 class PostsNew extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
+  onSubmit(props) {
+    this.props.createPost(props)
+    // createPost is returning a promise
+      .then(() => {        
+        this.context.router.push('/');
+        // blog post has been created. now let's send user to index
+        // using this.context.routher.push
+      });
+  }
+
   render() {
     const { fields: { title, categories, content }, handleSubmit } = this.props;
     // same as const handleSubmit = this.props.handleSubmit
     // const title = this.props.fields.title
 
     return (
-      <form onSubmit={handleSubmit(this.props.createPost)}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h3>Create a New Post</h3>
         <div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
           <label>Title</label>

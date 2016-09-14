@@ -13,6 +13,7 @@ export default (
     // IndexRoute will be default route if path isn't a child
     <IndexRoute component={PostsIndex} />
     <Route path="posts/new" component={PostsNew} />
+    <Route path="" component={PostShow} />
   </Route>
 );
 

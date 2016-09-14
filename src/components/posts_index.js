@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { connect }  from 'react-redux';
 // import { bindActionCreators } from 'redux';
-import { fetchPosts }from '../actions/index'
+import { fetchPosts } from '../actions/index'
 import { Link } from 'react-router';
   // Link is a normal React component
 
 class PostsIndex extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.renderPosts = this.renderPosts.bind(this)
-  // }
 
   componentWillMount() {
     this.props.fetchPosts();
@@ -19,9 +15,11 @@ class PostsIndex extends Component {
     return this.props.posts.map((post) => {
       return (
         <li className="list-group-item" key={post.id}>
-          <span className="pull-xs-right">{post.categories}</span>
-          <strong>{post.title}</strong>
-        </li>
+         <Link to={"posts/" + post.id}>
+           <span className="pull-xs-right">{post.categories}</span>
+           <strong>{post.title}</strong>
+         </Link>
+       </li>
       );
     });
   }

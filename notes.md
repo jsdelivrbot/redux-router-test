@@ -23,4 +23,9 @@ reduxForm has same behavior as connect, so we can use it to inject action creato
 validate function
 - Add a truthy value to errors.field
 - If that field matches a form field, reduxForm won't let it submit
-- 
+-
+
+
+- IndexRoute is shown whenever we navigate to '/'
+- Put ReactRouter in in our ReactDOM.render
+- browserHistiry says "use entire URL when you're trying to figure out what you are"
